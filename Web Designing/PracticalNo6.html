@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Using CSS Selectors</title>
+    <style>
+        /* using universal selector */
+        * {
+            box-sizing: border-box;
+            padding: 2px;
+        }
+
+        /* using element selector */
+        h1 {
+            font-family: Arial;
+            padding: 10px;
+        }
+
+        body {
+            font-family: Georgia;
+        }
+
+        fieldset {
+            padding: 10px;
+        }
+
+        /* using id selector */
+        #tag {
+            padding-right: 20px;
+        }
+
+        /* using group selector */
+        .name,
+        .fath,
+        .moth,
+        .sib,
+        #tag {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend>
+            <h1>Family Details Form</h1>
+        </legend>
+        <div>
+            <!-- Practical No.:- 6 -->
+            <p class="name">Name : <input type="text" /></p>
+        </div>
+        <div>
+            <span id="tag">Gender: </span>
+            <span>Male: <input type="radio" name="gender" /></span>
+            <span>Female: <input type="radio" name="gender" /></span>
+        </div>
+        <div>
+            <p class="sib">How many siblings you have : <input type="Number" /></p>
+        </div>
+        <div>
+            <p class="fath">Father Name : <input type="text" /></p>
+        </div>
+        <div>
+            <p class="moth">Mother Name : <input type="text" /></p>
+        </div>
+        <input type="submit" value="SUBMIT" />
+    </fieldset>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+/* using external css */
+body {
+    font-family: arial;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.main {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.extra {
+    margin-bottom: 20px;
+}

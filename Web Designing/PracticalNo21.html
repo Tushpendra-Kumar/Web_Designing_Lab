@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calendar Display</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Calendar Display</h1>
+
+    <script type="text/javascript">
+        // Prompt user for a year
+        let year = prompt("Enter a year:");
+
+        // Create a new Date object for January 1st of the given year
+        let date = new Date(year, 0, 1);
+
+        // Get the year and month from the Date object
+        let currentYear = date.getFullYear();
+        let currentMonth = date.getMonth();
+
+        // Create an array to store the names of the months
+        let monthNames = [
+            "January", "February", "March", "April",
+            "May", "June", "July", "August",
+            "September", "October", "November", "December"
+        ];
+
+        // Display the year and month
+        document.write("<h2>" + monthNames[currentMonth] + " " + currentYear + "</h2>");
+
+        // Create a table for the calendar
+        document.write("<table>");
+
+        // Create the table header row
+        document.write("<tr>");
+        document.write("<th>Sun</th>");
+        document.write("<th>Mon</th>");
+        document.write("<th>Tue</th>");
+        document.write("<th>Wed</th>");
+        document.write("<th>Thu</th>");
+        document.write("<th>Fri</th>");
+        document.write("<th>Sat</th>");
+        document.write("</tr>");
+
+        // Get the day of the week for the first day of the month
+        let startDay = date.getDay();
+
+        // Create variable for counting days
+        let dayCount = 1;
+
+        // Create table rows for each week
+        for (let week = 0; week < 6; week++) {
+            document.write("<tr>");
+
+            // Create table cells for each day of the week
+            for (let day = 0; day < 7; day++) {
+                if ((week === 0 && day < startDay) || dayCount > daysInMonth(currentMonth, currentYear)) {
+                    // Display empty cells before the start of the month or after the end of the month
+                    document.write("<td>&nbsp;</td>");
+                } else {
+                    // Display the day number
+                    document.write("<td>" + dayCount + "</td>");
+                    dayCount++;
+                }
+            }
+
+            document.write("</tr>");
+        }
+
+        document.write("</table>");
+
+        // Function to get the number of days in a given month
+        function daysInMonth(month, year) {
+            return new Date(year, month + 1, 0).getDate();
+        }
+    </script>
+</body>
+
+</html>

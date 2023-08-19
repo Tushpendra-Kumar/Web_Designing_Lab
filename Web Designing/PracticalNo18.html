@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Predefined Functions in JavaScript</title>
+</head>
+
+<body>
+    <h1>Predefined Functions in JavaScript</h1>
+
+    <h2>String Object Functions</h2>
+    <p id="stringFunctions"></p>
+
+    <h2>Math Object Functions</h2>
+    <p id="mathFunctions"></p>
+
+    <script type="text/javascript">
+        // String Object Functions
+        let str = "Hello, World!";
+        let stringFunctions = "Original String: " + str + "<br><br>";
+        stringFunctions += "Length: " + str.length + "<br>";
+        stringFunctions += "Uppercase: " + str.toUpperCase() + "<br>";
+        stringFunctions += "Lowercase: " + str.toLowerCase() + "<br>";
+        stringFunctions += "Substring: " + str.substring(7) + "<br>";
+        stringFunctions += "Replace: " + str.replace("World", "OpenAI") + "<br>";
+        stringFunctions += "Character at index 4: " + str.charAt(4) + "<br>";
+        document.getElementById("stringFunctions").innerHTML = stringFunctions;
+
+        // Math Object Functions
+        let number = 5.8;
+        let mathFunctions = "Original Number: " + number + "<br><br>";
+        mathFunctions += "Rounded Value: " + Math.round(number) + "<br>";
+        mathFunctions += "Ceiling Value: " + Math.ceil(number) + "<br>";
+        mathFunctions += "Floor Value: " + Math.floor(number) + "<br>";
+        mathFunctions += "Square Root: " + Math.sqrt(number) + "<br>";
+        mathFunctions += "Random Number between 0 and 1: " + Math.random() + "<br>";
+        document.getElementById("mathFunctions").innerHTML = mathFunctions;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registration Form</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Registration Form</h1>
+
+    <form id="registrationForm" onsubmit="validateForm(event)">
+        <div>
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div>
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+        </div>
+        <div>
+            <button type="submit">Register</button>
+        </div>
+    </form>
+
+    <script type="text/javascript">
+        function validateForm(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get form input values
+            let fullName = document.getElementById("fullName").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirmPassword").value;
+
+            // Clear previous error messages
+            let errorMessages = document.getElementsByClassName("error");
+            for (let i = 0; i < errorMessages.length; i++) {
+                errorMessages[i].innerHTML = "";
+            }
+
+            // Perform form validation
+            let isValid = true;
+
+            if (fullName.trim() === "") {
+                document.getElementById("fullNameError").innerHTML = "Please enter your full name.";
+                isValid = false;
+            }
+
+            if (email.trim() === "") {
+                document.getElementById("emailError").innerHTML = "Please enter your email address.";
+                isValid = false;
+            } else if (!isValidEmail(email)) {
+                document.getElementById("emailError").innerHTML = "Please enter a valid email address.";
+                isValid = false;
+            }
+
+            if (password.trim() === "") {
+                document.getElementById("passwordError").innerHTML = "Please enter a password.";
+                isValid = false;
+            } else if (password !== confirmPassword) {
+                document.getElementById("confirmPasswordError").innerHTML = "Passwords do not match.";
+                isValid = false;
+            }
+
+            // If form is valid, submit the form
+            if (isValid) {
+                document.getElementById("registrationForm").submit();
+            }
+        }
+
+        // Function to validate email format using regular expression
+        function isValidEmail(email) {
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailPattern.test(email);
+        }
+    </script>
+</body>
+
+</html>

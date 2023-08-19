@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Open New Window</title>
+    <script type="text/javascript">
+        function openNewWindow() {
+            // Open a new window with custom settings
+            var newWindow = window.open("", "_blank", "width=500,height=400");
+
+            // Write content to the new window
+            newWindow.document.write("<html><head><title>New Window</title></head><body><h1>New Window</h1><p>This is a new window opened from the current window.</p></body></html>");
+
+            // Close the new window after 5 seconds (for demonstration purposes)
+            setTimeout(function () {
+                newWindow.close();
+            }, 5000);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Open New Window</h1>
+    <button onclick="openNewWindow()">Open New Window</button>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Image and Text On Hover</title>
+    <style>
+        .content {
+            display: inline-block;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .hovered {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .hovered .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .hovered:hover .overlay {
+            opacity: 1;
+        }
+
+        .hovered img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Image and Text On Hover</h1>
+
+    <div class="content hovered">
+        <img src="/imgs/pic.jpg" alt="Existing Image">
+        <div class="overlay">
+            <h2>New Image Title</h2>
+            <p>New Image Description</p>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    // You can add JavaScript code here if needed
+    </script>
+</body>
+
+</html>

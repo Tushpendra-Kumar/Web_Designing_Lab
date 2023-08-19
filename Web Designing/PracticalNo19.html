@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Predefined Functions in JavaScript</title>
+</head>
+
+<body>
+    <h1>Predefined Functions in JavaScript</h1>
+
+    <h2>Array Object Functions</h2>
+    <p id="arrayFunctions"></p>
+
+    <h2>Date Object Functions</h2>
+    <p id="dateFunctions"></p>
+
+    <script type="text/javascript">
+        // Array Object Functions
+        let fruits = ["Apple", "Banana", "Orange"];
+        let arrayFunctions = "Original Array: " + fruits + "<br><br>";
+        arrayFunctions += "Length: " + fruits.length + "<br>";
+        arrayFunctions += "Join: " + fruits.join(", ") + "<br>";
+        arrayFunctions += "Push: " + fruits.push("Grapes") + "<br>";
+        arrayFunctions += "Pop: " + fruits.pop() + "<br>";
+        arrayFunctions += "Slice: " + fruits.slice(1, 3) + "<br>";
+        arrayFunctions += "Index of 'Banana': " + fruits.indexOf("Banana") + "<br>";
+        document.getElementById("arrayFunctions").innerHTML = arrayFunctions;
+
+        // Date Object Functions
+        let currentDate = new Date();
+        let dateFunctions = "Current Date: " + currentDate + "<br><br>";
+        dateFunctions += "Year: " + currentDate.getFullYear() + "<br>";
+        dateFunctions += "Month: " + (currentDate.getMonth() + 1) + "<br>";
+        dateFunctions += "Date: " + currentDate.getDate() + "<br>";
+        dateFunctions += "Day: " + currentDate.getDay() + "<br>";
+        dateFunctions += "Hours: " + currentDate.getHours() + "<br>";
+        dateFunctions += "Minutes: " + currentDate.getMinutes() + "<br>";
+        dateFunctions += "Seconds: " + currentDate.getSeconds() + "<br>";
+        document.getElementById("dateFunctions").innerHTML = dateFunctions;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Sort Example</title>
+    <style>
+        p,
+        h1 {
+            font-size: 40px;
+            margin: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JavaScript Sort Example</h1>
+    <p>nums = [5, 1, 8, 2, 10]</p>
+    <p id="asc">Ascending Order:</p>
+    <script>
+        const nums = [5, 1, 8, 2, 10];
+        nums.sort((a, b) => a - b);
+        const ascending = document.getElementById("asc");
+        ascending.innerText += " " + nums.join(", ");
+    </script>
+</body>
+
+</html

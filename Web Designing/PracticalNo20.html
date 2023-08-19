@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exception Handling in JavaScript</title>
+</head>
+
+<body>
+    <h1>Exception Handling in JavaScript</h1>
+
+    <script type="text/javascript">
+        try {
+            // Code that may throw an exception
+            let result = 10 / 0;
+            console.log("Result:", result); // This line won't execute
+        } catch (error) {
+            // Exception handling code
+            console.log("An error occurred:", error.message);
+        } finally {
+            // Code that always executes
+            console.log("Exception handling complete.");
+        }
+    </script>
+</body>
+
+</html>

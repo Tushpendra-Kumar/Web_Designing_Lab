@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Make Table using CSS</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: arial;
+            font-size: 30px;
+        }
+
+        table,
+        td,
+        th {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .main {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .heading {
+            background-color: rgb(240, 215, 215);
+        }
+
+        .wd {
+            background-color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    Practical No.:- 9
+    <div>
+        <h1>4th Semester Subjects Details</h1>
+    </div>
+    <div>
+        <table class="main">
+            <tr class="heading">
+                <th>Subjects</th>
+                <th>Codes</th>
+                <th>Teachers</th>
+            </tr>
+            <tr class="wd">
+                <td>Web Designing</td>
+                <td>KIT 401</td>
+                <td>Mr. Kiran Kumar</td>
+            </tr>
+            <tr>
+                <td>Technical Communication</td>
+                <td>KAS 401</td>
+                <td>Dr. Ram Naresh Mahto</td>
+            </tr>
+            <tr>
+                <td>Maths IV</td>
+                <td>KAS 402</td>
+                <td>Dr. Amit Verma</td>
+            </tr>
+            <tr>
+                <td>Operating System</td>
+                <td>KCS 401</td>
+                <td>Ms. Preeti Katiyar</td>
+            </tr>
+            <tr>
+                <td>Theory of Automata & Formal Language</td>
+                <td>KCS 402</td>
+                <td>Ms. Anam Khan</td>
+            </tr>
+            <tr>
+                <td>Computer System Security</td>
+                <td>KNC 401</td>
+                <td>Mr. Vivek Aggarwal</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

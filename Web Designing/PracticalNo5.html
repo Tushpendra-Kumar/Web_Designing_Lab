@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contact Form | Internal CSS</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .form {
+            background-color: #f2f2f2;
+            border: 2px solid lightgrey;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        body {
+            font-family: verdana;
+            padding: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            border: 2px solid lightgrey;
+            border-radius: 5px;
+            padding: 5px;
+            width: 100%;
+            margin: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: green;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            font-style: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <form class="form">
+            <header>
+                <h1>Contact Form</h1>
+            </header>
+            <hr />
+            <p><b>Name: * </b> <input type="text" /></p>
+            <p><b>Roll No: * </b> <input type="text" /></p>
+            <p><b>Email: * </b> <input type="email" /></p>
+            <p><b>Your Message: * </b></p>
+            <textarea cols="40" rows="5"></textarea>
+            <br />
+            <br />
+            <input type="submit" value="Send Message" />
+        </form>
+    </div>
+</body>
+
+</html>

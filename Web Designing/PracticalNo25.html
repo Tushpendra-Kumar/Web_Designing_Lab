@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calendar Display</title>
+</head>
+
+<body>
+    <h1>Calendar Display</h1>
+
+    <label for="month">Select Month:</label>
+    <select id="month">
+        <option value="0">January</option>
+        <option value="1">February</option>
+        <option value="2">March</option>
+        <option value="3">April</option>
+        <option value="4">May</option>
+        <option value="5">June</option>
+        <option value="6">July</option>
+        <option value="7">August</option>
+        <option value="8">September</option>
+        <option value="9">October</option>
+        <option value="10">November</option>
+        <option value="11">December</option>
+    </select>
+
+    <label for="year">Select Year:</label>
+    <select id="year"></select>
+
+    <button onclick="displayCalendar()">Display Calendar</button>
+
+    <div id="calendar"></div>
+
+    <script type="text/javascript">
+        // Populate the year combo box with options
+        var yearSelect = document.getElementById("year");
+        var currentYear = new Date().getFullYear();
+        for (var i = currentYear - 10; i <= currentYear + 10; i++) {
+            var option = document.createElement("option");
+            option.value = i;
+            option.text = i;
+            yearSelect.appendChild(option);
+        }
+
+        // Function to display the calendar for the selected month and year
+        function displayCalendar() {
+            var monthSelect = document.getElementById("month");
+            var selectedMonth = parseInt(monthSelect.value);
+            var selectedYear = parseInt(yearSelect.value);
+
+            // Create a new Date object for the selected month and year
+            var date = new Date(selectedYear, selectedMonth, 1);
+
+            // Get the number of days in the selected month
+            var daysInMonth = new Date(selectedYear, selectedMonth + 1, 0).getDate();
+
+            // Get the day of the week for the first day of the month
+            var startDay = date.getDay();
+
+            // Create an array to store the names of the months
+            var monthNames = [
+                "January", "February", "March", "April",
+                "May", "June", "July", "August",
+                "September", "October", "November", "December"
+            ];
+
+            // Generate the HTML for the calendar
+            var calendarHTML = "<h2>" + monthNames[selectedMonth] + " " + selectedYear + "</h2>";
+            calendarHTML += "<table>";
+            calendarHTML += "<tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>";
+
+            var dayCount = 1;
+            for (var week = 0; week < 6; week++) {
+                calendarHTML += "<tr>";
+                for (var day = 0; day < 7; day++) {
+                    if ((week === 0 && day < startDay) || dayCount > daysInMonth) {
+                        calendarHTML += "<td>&nbsp;</td>";
+                    } else {
+                        calendarHTML += "<td>" + dayCount + "</td>";
+                        dayCount++;
+                    }
+                }
+                calendarHTML += "</tr>";
+                if (dayCount > daysInMonth
